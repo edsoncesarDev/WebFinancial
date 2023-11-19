@@ -8,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDependencyInjectionAPI(builder.Configuration);
 
 // resolvendo problema de loop infinito
-builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
-            Newtonsoft.Json.ReferenceLoopHandling.Ignore); 
+builder.Services.AddControllers();
+    //.AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling =
+    //        Newtonsoft.Json.ReferenceLoopHandling.Ignore); 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

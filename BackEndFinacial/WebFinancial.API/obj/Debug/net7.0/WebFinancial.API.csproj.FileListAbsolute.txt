@@ -88,7 +88,6 @@ C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.AP
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.AssemblyInfoInputs.cache
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.AssemblyInfo.cs
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.csproj.CoreCompileInputs.cache
-C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.sourcelink.json
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.dll
@@ -169,3 +168,4 @@ C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.AP
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.csproj.CopyComplete
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.genruntimeconfig.cache
 C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\ref\WebFinancial.API.dll
+C:\Users\edson\Desktop\dev\Projetos\WebFinancial\BackEndFinacial\WebFinancial.API\obj\Debug\net7.0\WebFinancial.API.MvcApplicationPartsAssemblyInfo.cs

@@ -2,8 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebFinancial.Application.IServiceApplication;
 using WebFinancial.Application.Mappings;
+using WebFinancial.Application.ServiceApplication;
 using WebFinancial.Data.Context;
+using WebFinancial.Data.IRepositoryPattern;
+using WebFinancial.Data.RepositoryPattern;
 
 namespace WebFinancial.CrossCutting;
 
@@ -14,6 +18,10 @@ public static class DependencyInjectionAPI
 
         services.AddDbContext<AppDbContext>(options => 
         options.UseSqlServer(configuration.GetConnectionString("Cennection")));
+
+        services.AddScoped<IFaturaService, FaturaService>();
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddAutoMapper(typeof(MappingsProfile));
 
