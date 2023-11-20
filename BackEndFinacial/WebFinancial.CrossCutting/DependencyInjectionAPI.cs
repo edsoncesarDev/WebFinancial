@@ -17,7 +17,7 @@ public static class DependencyInjectionAPI
     {
 
         services.AddDbContext<AppDbContext>(options => 
-        options.UseSqlServer(configuration.GetConnectionString("Cennection")));
+        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IFaturaService, FaturaService>();
 

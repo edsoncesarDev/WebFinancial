@@ -24,7 +24,7 @@ public class GeneralPersistence<T> : IGeneralPersistence<T> where T: class
 
     public async Task<T> GetById(Expression<Func<T, bool>> id)
     {
-        return await _table.FirstOrDefaultAsync(id);
+        return await _table.AsNoTracking().FirstOrDefaultAsync(id);
     }
 
     public void Add(T entity)
