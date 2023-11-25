@@ -1,47 +1,33 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 using WebFinancial.Data.Context;
 using WebFinancial.Data.IRepository;
 
 namespace WebFinancial.Data.Repository;
 
-public class GeneralPersistence<T> : IGeneralPersistence<T> where T: class
+public class GeneralPersistence : IGeneralPersistence
 {
     private AppDbContext _context;
-    private DbSet<T> _table;
 
     public GeneralPersistence(AppDbContext context)
     {
         _context = context;
-        _table = _context.Set<T>();
     }
 
-    public async Task<IEnumerable<T>> GetAll()
+    public void Add<T>(T entity) where T : class
     {
-        return await _table.AsNoTracking().ToListAsync();
+        _context.Add(entity);
     }
 
-    public async Task<T> GetById(Expression<Func<T, bool>> id)
+    public void Update<T>(T entity) where T : class
     {
-        return await _table.AsNoTracking().FirstOrDefaultAsync(id);
+        _context.Entry(entity).State = EntityState.Modified;
+        _context.Update(entity);
     }
 
-    public void Add(T entity)
+    public void Delete<T>(T entity) where T : class
     {
-        _table.Add(entity);
-    }
-
-    public void Update(T entity)
-    {
-        _table.Entry(entity).State = EntityState.Modified;
-        _table.Update(entity);
-    }
-
-    public void Delete(Expression<Func<T, bool>> id)
-    {
-        T existing = _table.Find(id);
-        _table.Remove(existing);
+        _context.Remove(entity);
     }
     
 }

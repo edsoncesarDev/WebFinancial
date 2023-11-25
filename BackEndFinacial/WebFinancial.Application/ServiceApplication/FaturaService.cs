@@ -22,7 +22,7 @@ public class FaturaService : IFaturaService
     {
         try
         {
-            var faturas = await _unitOfWork.FaturaPersistence.GetAll();
+            var faturas = await _unitOfWork.FaturaPersistence.GetAllFaturasAsync();
 
             if (faturas == null) return null;
 
@@ -39,7 +39,7 @@ public class FaturaService : IFaturaService
     {
         try
         {
-            var fatura = await _unitOfWork.FaturaPersistence.GetById(x => x.Id == faturaId);
+            var fatura = await _unitOfWork.FaturaPersistence.GetFaturaByIdAsync(faturaId);
 
             if (fatura == null) return null;
 
@@ -57,11 +57,11 @@ public class FaturaService : IFaturaService
         try
         {
             var fatura = _mapper.Map<Fatura>(model);
-            _unitOfWork.FaturaPersistence.Add(fatura);
+            _unitOfWork.GeneralPersistence.Add(fatura);
 
             if(await _unitOfWork.SaveChangesAsync())
             {
-                var result = await _unitOfWork.FaturaPersistence.GetById(x => x.Id == model.Id);
+                var result = await _unitOfWork.FaturaPersistence.GetFaturaByIdAsync(fatura.Id);
                 return _mapper.Map<FaturaDto>(result);
             }
 
@@ -80,17 +80,17 @@ public class FaturaService : IFaturaService
             if (faturaId != model.Id)
                 throw new Exception($"Id {faturaId} inválido.");
 
-            var fatura = await _unitOfWork.FaturaPersistence.GetById(x => x.Id == faturaId);
+            var fatura = await _unitOfWork.FaturaPersistence.GetFaturaByIdAsync(faturaId);
 
             if(fatura == null) return null;
 
             _mapper.Map(model, fatura);
 
-            _unitOfWork.FaturaPersistence.Update(fatura);
+            _unitOfWork.GeneralPersistence.Update(fatura);
 
             if(await _unitOfWork.SaveChangesAsync())
             {
-                var result = await _unitOfWork.FaturaPersistence.GetById(x => x.Id == fatura.Id);
+                var result = await _unitOfWork.FaturaPersistence.GetFaturaByIdAsync(fatura.Id);
                 return _mapper.Map<FaturaDto>(result);
             }
 
@@ -108,7 +108,9 @@ public class FaturaService : IFaturaService
     {
         try
         {
-           _unitOfWork.FaturaPersistence.Delete(x => x.Id == faturaId);
+            var fatura = await _unitOfWork.FaturaPersistence.GetFaturaByIdAsync(faturaId);
+
+            _unitOfWork.GeneralPersistence.Delete(fatura);
 
             return await _unitOfWork.SaveChangesAsync();
             

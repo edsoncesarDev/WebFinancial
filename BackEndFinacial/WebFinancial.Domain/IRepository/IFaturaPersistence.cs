@@ -2,7 +2,9 @@
 
 namespace WebFinancial.Data.IRepository
 {
-    public interface IFaturaPersistence : IGeneralPersistence<Fatura>
+    public interface IFaturaPersistence
     {
+        Task<IEnumerable<Fatura>> GetAllFaturasAsync();
+        Task<Fatura> GetFaturaByIdAsync(int id);
     }
 }

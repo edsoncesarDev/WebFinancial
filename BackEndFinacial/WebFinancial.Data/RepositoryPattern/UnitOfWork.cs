@@ -10,6 +10,7 @@ public class UnitOfWork : IUnitOfWork
 {
     public AppDbContext _context;
     private FaturaPersistence _faturaPersistence;
+    private GeneralPersistence _generalPersistence;
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
@@ -20,6 +21,14 @@ public class UnitOfWork : IUnitOfWork
         get
         {
             return _faturaPersistence = _faturaPersistence ?? new FaturaPersistence(_context);
+        }
+    }
+
+    public IGeneralPersistence GeneralPersistence 
+    {
+        get
+        {
+            return _generalPersistence = _generalPersistence ?? new GeneralPersistence(_context);
         }
     }
 

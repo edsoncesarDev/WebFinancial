@@ -8,5 +8,5 @@ public class FaturaDto
     public string DataFechamento { get; set; }
     public string StatusFatura { get; set; }
     public string Valor { get; set; }
-    public IEnumerable<CompraDto> Compras { get; set; }
+    //public IEnumerable<CompraDto> Compras { get; set; }
 }
