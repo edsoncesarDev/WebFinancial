@@ -7,5 +7,5 @@ public class Fatura
     public DateTime DataFechamento { get; set; }
     public string StatusFatura { get; set; }
     public decimal Valor { get; set; }
-    //public IEnumerable<Compra> Compras { get; set; }
+    public IEnumerable<Compra> Compras { get; set; }
 }

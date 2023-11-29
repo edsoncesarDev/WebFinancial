@@ -1,7 +1,4 @@
-﻿
-using WebFinancial.Domain;
-
-namespace WebFinancial.Application.Dtos;
+﻿namespace WebFinancial.Application.Dtos;
 
 public class CompraDto
 {
